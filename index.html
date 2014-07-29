@@ -33,7 +33,7 @@
 		<div class="container">
 			<div id="rightSide">
 				<div id="latestSpot"></div>
-				<div id="selectedSpot"></div>
+				<div id="application"></div>
 			</div>
 			<div id="map"></div>
 		</div>
@@ -60,34 +60,12 @@
 
 	<script id="hackSpotsTable" type="text/html">
 		<table>
-		<tr><th class="tHeader">Name</th><th class="tHeader">Address</th><th class="tHeader">City</th><th class="tHeader">State</th><th class="tHeader">Country</th><th class="">Elsewhere</th></tr>
+		<tr><th class="tHeader">Application</th><th class="tHeader">Address</th><th class="tHeader">City</th><th class="tHeader">State</th><th class="tHeader">Category</th><th class="">Elsewhere</th></tr>
 		  {{#rows}}
-		  	<tr id="{{rowNumber}}" class="spotRow"><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{country}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
-		  	<tr class="hideRow"><td>wifi: {{wifipassword}}</td></tr>
+		  	<tr id="{{rowNumber}}" class="spotRow"><td>{{app}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{category}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
+		  	<tr class="hideRow"><td>Description: {{description}}</td></tr>
 		  {{/rows}}
 	  </table>
-	</script>
-
-	<script id="latestSpot" type="text/html">
-			{{#rows}}
-				<h4 class="fauxButton">MOST RECENT SPOT</h4>
-				<h2>{{name}}</h2>
-				<p class="colorText">{{address}}<p>
-				<p class="colorText">{{city}}, {{state}} {{#postcode}}, {{postcode}} {{/postcode}}</p>
-				<ul>
-			  	<li><span class="category">Wifi:</span> {{wifipassword}}</li>
-			  	<li><span class="category">Outlets:</span> {{outlets}}</li>
-			  	<li><span class="category">Couch:</span> {{couch}}</li>
-			  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-			  	<li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
-			  	<li><span class="category">Brewing:</span> {{brewing}}</li>
-			  	<li><span class="category">Contributed By:</span> <a href="http://www.twitter.com/{{contributerstwitter}}" target="_blank">@{{contributerstwitter}}</a></li>
-		  	</ul>
-		  	<ul>
-		  		<li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
-		  		<li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
-		  	</ul>
-		  {{/rows}}
 	</script>
 
 	<script id="theNumberofSpots" type="text/html">
@@ -95,26 +73,26 @@
 	</script>
 
 	<script id="popUps" type="text/html">
-		<h2>{{ name }}</h2>
+		<h2>{{ app }}</h2>
 	</script>
 
-	<script id="selectedSpot" type="text/html">
+	<script id="application" type="text/html">
 		{{#rows}}
-			<h4 class="fauxButton">SELECTED SPOT</h4>
-			<h2>{{name}}</h2>
-			<p class="colorText">{{address}}<p>
-			<p class="colorText">{{city}}, {{state}} {{#postcode}}, {{postcode}} {{/postcode}}</p>
+			<h4 class="fauxButton">Code for America Application</h4>
+			<h2>{{app}}</h2>
+			<p class="colorText">{{city}} {{state}} / {{program1}} {{year1}}</p>
 			<ul>
-		  	<li><span class="category">Wifi:</span> {{wifipassword}}</li>
+		  	<li><span class="category">Description:</span> {{description}}</li>
+		  	<br>
 		  	<li><span class="category">Outlets:</span> {{outlets}}</li>
 		  	<li><span class="category">Couch:</span> {{couch}}</li>
 		  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-		  	<li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
-		  	<li><span class="category">Brewing:</span> {{brewing}}</li>
-	  	</ul>
+		  	<li><span class="category">Parks:</span> {{parks}}</li>
+		  	<li><span class="category">Built By:</span> {{devteam}}</li>
+	  		</ul>
 	  	<ul>
-	  		<li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
-	  		<li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
+	  		<li><a href="https://github.com/codeforamerica/{{giturl}}" target="_blank">View on Gitub</a></li>
+	  		<li><a href="http://www.codeforamerica.org/apps/{{infourl}}" target="_blank">View on Code For America</a></li>
 	  	</ul>
 	  {{/rows}}
 	</script>
@@ -123,7 +101,7 @@
 	  document.addEventListener('DOMContentLoaded', function() {
 	  	var gData
 	  	// var URL = "10z-2P8l88hLF35EodIjigs5cyCD7BtmfZS631JMtIUU" // test new spreadsheets
-	  	var URL = "0Ao5u1U6KYND7dFVkcnJRNUtHWUNKamxoRGg4ZzNiT3c"
+	  	var URL = "0ApJL2XBeZtkMdGVsVzZTYmxhQmx2cEQwc2lBOTF1S2c"
 			Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
 		})
 
@@ -142,11 +120,11 @@
 	 			var rowNumber = $(this).closest("tr").attr("id")
 	 			$('#' + rowNumber).addClass("selectedRow")
 	 			var dataElement = Sheetsee.getMatches(gData, rowNumber, "rowNumber")
-	 			var selectedSpot = ich.selectedSpot({
+	 			var application = ich.application({
 				  rows: dataElement
 			  })
 			  $('#latestSpot').css("display", "none")
-			  $('#selectedSpot').html(selectedSpot).css("display", "inline")
+			  $('#application').html(application).css("display", "inline")
 			  var selectedCoords = [dataElement[0].lat, dataElement[0].long]
 			  matchGeoJSONbyRowNumber(rowNumber, geoJSON, gData, "#FF4646")
 			  var markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 13)
@@ -183,7 +161,7 @@
 
 			// create geoJSON with coordinates and other
 			// useful bits from the original data
-			var optionsJSON = ["name", "address", "city", "rowNumber"]
+			var optionsJSON = ["app", "address", "city", "rowNumber"]
 		  var geoJSONnoHL = Sheetsee.createGeoJSON(gData, optionsJSON)
 		  // change the color of the most recently added spot's marker
 		  var geoJSON = highlightLastMarker(geoJSONnoHL, "#FF4646")
@@ -216,11 +194,11 @@
 				// using row number, get the data for the selected spot
 			  var dataElement = Sheetsee.getMatches(gData, rowNumber, "rowNumber")
 			  // take those details and re-write the selected spot section
-				var selectedSpot = ich.selectedSpot({
+				var application = ich.application({
 				  rows: dataElement
 			 	})
 			  $('#latestSpot').css("display", "none")
-			  $('#selectedSpot').html(selectedSpot).css("display", "inline")
+			  $('#application').html(application).css("display", "inline")
 			  })
 			}
 
@@ -229,7 +207,7 @@
 				markerLayer = Sheetsee.addMarkerLayer(geoJSON, map, 13)
 				addPopups(map, markerLayer)
 				$('#latestSpot').css("display", "inline")
-			  $('#selectedSpot').css("display", "none")
+			  $('#application').css("display", "none")
 			})
 
 			// find total number of spots added
