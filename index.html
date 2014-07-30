@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Hack Spots</title>
+		<title>The Code for America Application Ecosystem</title>
 		<script type="text/javascript" src="js/ICanHaz.js"></script>
 		<script type="text/javascript" src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
 		<script type="text/javascript" src='js/jquery.js '></script>
@@ -12,7 +12,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic'>
-		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700'>
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lobster'>
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oswald:300,400,700'>
+		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400'>
 		<link media="screen" rel="stylesheet" type="text/css" href="css/style.css">
 		<link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
 		<link rel="stylesheet" href="css/MarkerCluster.css" />
@@ -20,14 +22,15 @@
 	</head>
 <body>
 	<div id="wrapper">
-		<h1>Hack Spots</h1>
+		<h1>Application Ecosystem</h1>
 		<div>
 			<ul class="nav">
-				<li><strong>The collected favorites of those who hack</strong></li>
+				<li><strong>An Open Source Library of Code for America Applications</strong></li>
+				<br>
 				<li><a href="#info">INFO</a> -</li>
 				<li><a href="http://jlord.github.com/sheetsee.js" target="_blank">POWERED BY SHEETSEE.JS</a> -</li>
-				<li><a href="http://www.github.com/jlord/hack-spots" target="_blank">GITHUB</a> -</li>
-				<li><a href="http://www.twitter.com/jllord" target="_blank">@JLLORD</a></li>
+				<li><a href="https://github.com/codeforamerica" target="_blank">GITHUB</a> -</li>
+				<li><a href="https://twitter.com/codeforamerica" target="_blank">@CODEFORAMERICA</a></li>
 			</ul>
 		</div>
 		<div class="container">
@@ -44,32 +47,28 @@
 			<div id="hackSpotsTable"></div>
 		</div>
 		<div id="info" class="container">
-			<h3>Contribute!</h3>
-			<div id="theNumberofSpots"></div>
-			<p>This website is hooked up to <a href="https://docs.google.com/spreadsheet/ccc?key=0Ao5u1U6KYND7dFVkcnJRNUtHWUNKamxoRGg4ZzNiT3c#gid=0" target="_blank">this Google Spreadsheet</a>, which I've shared, so click and add your favorite hack spots to the bottom of the list! For the map you'll need to <strong>get the lat and long</strong> of the spot, you can get that <a href="http://www.latlong.net/" target="_blank">here</a>. The locating of these places is helpful, so please try to fill out all the columns.</p>
-
 			<h3>Info</h3>
-			<p>When I'm visiting a new city I'd like to know which coffee shops have the best vibes, great coffee and are good for hunkering down and having a good hack. Yelp will tell you where the Starbucks is and Foursquare will tell you where your friend's have <em>been</em> - but did they like it and was it a grab in go place or a hack place? Plus, what about the people I don't follow on Foursquare or who can't check-in when in other countries?</p>
+			<p>Asylum best practices, microloans, global leaders overcome injustice educate, gender rights social challenges aid collaborative consumption. Support, fluctuation time of extraordinary change policy dialogue working alongside criteria Oxfam Ford Foundation. Significant social analysis benefit refugee freedom vulnerable population diversity. Initiative reproductive rights accelerate progress, activism public institutions our grantees and partners healthcare fundraise. Social impact, vaccine developing nations gender equality advancement.</p>
 
-			<p>Besides being a list I've wanted to have, it's a fantastic (or I think so) way of using <a href="http://jlord.github.io/sheetsee.js" target="_blank">sheetsee.js</a>, which is a little JavaScript library I've been working on. Sheetsee.js helps you hook a Google Spreadsheet (awesome for data and collaboration!) to a website to make data more visual (maps, tables, charts).</p>
+			<p>Leverage committed peaceful economic security minority; lasting change sanitation. 501(c)(3) institutions youth inspiration agriculture improving quality equality; humanitarian global health, education focus on impact diversification citizenry lifting people up. </p>
 
-			<h3>Fork-n-Go</h3>
-			<p>This is a work-in-progress example of a fork-n-go project - which means, there is just a <a href="https://github.com/jlord/hack-spots" target="_blank">gh-pages branch in GitHub</a> for this project so when you fork it, you've got a live and hosted website instantly. BAM! Just copy the spreadsheet headers and create your own spreadsheet, swap out the spreadsheet key in index.html and commit those changes. BAM! You've got a live and hosted site with a spreadsheet you control. More on the <a href="http://www.github.com/jlord/hack-spots" target="_blank">readme</a>.</p>
+			<p>Citizens of change elevate; agency harness; Martin Luther King Jr. participatory monitoring affordable health care social entrepreneurship. Medicine public sector momentum global network revitalize. Relief Action Against Hunger, governance progress outcomes donation, prosperity Gandhi respond employment social innovation. </p>
+			
+			<h3>Contribute!</h3>
+			<p>This website is hooked up to <a href="https://docs.google.com/spreadsheet/ccc?key=0ApJL2XBeZtkMdGVsVzZTYmxhQmx2cEQwc2lBOTF1S2c#gid=0" target="_blank">this Google Spreadsheet</a>, which I've shared, so click and add your favorite hack spots to the bottom of the list! For the map you'll need to <strong>get the lat and long</strong> of the spot, you can get that <a href="http://www.latlong.net/" target="_blank">here</a>. The locating of these places is helpful, so please try to fill out all the columns.</p>
+
+			
 		</div>
 	</div><!-- end wrapper -->
 
 	<script id="hackSpotsTable" type="text/html">
 		<table>
-		<tr><th class="tHeader">Application</th><th class="tHeader">Address</th><th class="tHeader">City</th><th class="tHeader">State</th><th class="tHeader">Category</th><th class="">Elsewhere</th></tr>
+		<tr><th class="tHeader">Application</th><th class="tHeader">Category</th><th class="tHeader">City</th><th class="tHeader">State</th><th class="">Elsewhere</th></tr>
 		  {{#rows}}
-		  	<tr id="{{rowNumber}}" class="spotRow"><td>{{app}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{category}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
+		  	<tr id="{{rowNumber}}" class="spotRow"><td>{{app}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{category}}</td><td><a class="button" href="https://github.com/codeforamerica/{{giturl}}" target="_blank">Github</a> <a class="button" href="{{weburl}}" target="_blank">Website</a></td></tr>
 		  	<tr class="hideRow"><td>Description: {{description}}</td></tr>
 		  {{/rows}}
 	  </table>
-	</script>
-
-	<script id="theNumberofSpots" type="text/html">
-		<p><strong><span class="red-text">{{numberOfSpots}}</span> hack spots strong!</p>
 	</script>
 
 	<script id="popUps" type="text/html">
@@ -79,16 +78,13 @@
 	<script id="application" type="text/html">
 		{{#rows}}
 			<h4 class="fauxButton">Code for America Application</h4>
-			<h2>{{app}}</h2>
-			<p class="colorText">{{city}} {{state}} / {{program1}} {{year1}}</p>
+			<h2 class="appName">{{app}}</h2>
+			<p class="colorText">{{description}}</p>
 			<ul>
-		  	<li><span class="category">Description:</span> {{description}}</li>
 		  	<br>
-		  	<li><span class="category">Outlets:</span> {{outlets}}</li>
-		  	<li><span class="category">Couch:</span> {{couch}}</li>
-		  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-		  	<li><span class="category">Parks:</span> {{parks}}</li>
-		  	<li><span class="category">Built By:</span> {{devteam}}</li>
+		  	<li><span class="category">City, State:</span> {{city}} {{state}}</li>
+		  	<li><span class="category">Programs:</span> {{program1}} {{year1}} {{program2}} {{year2}}</li>
+		  	<li><span class="category">Category:</span> {{category}}</li>
 	  		</ul>
 	  	<ul>
 	  		<li><a href="https://github.com/codeforamerica/{{giturl}}" target="_blank">View on Gitub</a></li>
